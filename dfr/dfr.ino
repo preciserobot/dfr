@@ -174,8 +174,7 @@ void loop() {
   if (pulseDetected) {
     pulseDetected = false;  // reset pulse detection flag
 
-    Serial.print("Interrupt! Signal is now: ");
-    Serial.println(signalState == HIGH ? "HIGH" : "LOW");
+    Serial.printf("Interrupt! Signal is now: %s", signalChange == HIGH ? "HIGH" : "LOW");
 
     // reset logic if pulses were stopped for a while
     if (!isRunning()) {
